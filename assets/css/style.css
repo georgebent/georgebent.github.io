@@ -248,3 +248,9 @@ a:hover {
 .gallery img:hover {
 	opacity: 0.4;
 }
+
+@media (min-width: 20px) and (max-width: 1024px) {
+	.footer-on-works {
+	    position: inherit;		
+	}
+}
