@@ -1,19 +1,4 @@
-/*
- * Author: Carlos Alvarez
- * URL: http://Alvarez.is
- *
- * Project Name: NYC Design
- * Version: 1.0
- * Date: 04-20-2014
- * URL: 
- */
-
-
-/* ==========================================================================
-   Base Styles, Bootstrap Modifications & Fonts Import
-   ========================================================================== */
-
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 
 ::-moz-selection {
@@ -52,7 +37,6 @@
 .mb {
 	margin-bottom: 30px;
 }
-
 
 
 /* ==========================================================================
@@ -163,8 +147,8 @@ a:hover {
 
 #headerwrap h1, #aboutwrap h1 {
 	color:#ffffff;
-	padding-top: 10px;
-	padding-bottom: 20px;
+	padding: 10px 0;
+	margin: 10px 0;
 	letter-spacing: 4px;
 	font-size: 80px;
 	font-weight: bold;
@@ -257,6 +241,7 @@ a:hover {
 	margin-top: -70px;
 	padding-top: 250px;
 	text-align:center;
+
 	background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -285,4 +270,10 @@ a:hover {
 
 .gallery img:hover {
 	opacity: 0.4;
+}
+
+@media (min-width: 20px) and (max-width: 1024px) {
+	.footer-on-works {
+	    position: inherit;		
+	}
 }
