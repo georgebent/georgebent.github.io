@@ -53,21 +53,7 @@
 	margin-bottom: 30px;
 }
 
-.img-portfolio {
-	display: inline-block;
-	height: 150px;
-}
 
-.about-wrapper .info {
-	text-align: left;
-	line-height: 1.6
-}
-
-.footer-on-works {
-    position: absolute;		
-    width: 100%;
-    bottom: 0px;
-}
 
 /* ==========================================================================
    General styles
@@ -123,12 +109,28 @@ a:hover {
 	color: #1eda75;
 }
 
+.navbar-default .navbar-nav > li > a:hover {
+	color: #4ca25b;
+}
+
 .portfolio-in-works {
 	margin-top: 50px;
 }
 
 .gallery p {
 	margin: 10px 0;
+}
+
+.img-portfolio {
+	display: inline-block;
+	height: 150px;
+}
+
+.about-wrapper .info {
+	text-align: center;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 10px 0 20px;
 }
 
 /* ==========================================================================
@@ -142,6 +144,10 @@ a:hover {
 	text-align:center;
 	background-position: center center;
 	min-height: 650px;
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 	width: 100%;
 	
     -webkit-background-size: 100%;
@@ -155,7 +161,7 @@ a:hover {
     background-size: cover;
 }
 
-#headerwrap h1 {
+#headerwrap h1, #aboutwrap h1 {
 	color:#ffffff;
 	padding-top: 10px;
 	padding-bottom: 20px;
@@ -164,9 +170,19 @@ a:hover {
 	font-weight: bold;
 }
 
-#headerwrap h4 {
+#headerwrap h4, #aboutwrap h4 {
 	font-weight: 400;
 	color: #ffffff
+}
+
+#aboutwrap a {
+	font-weight: 600;
+	font-size: 50px;
+	color: #ffffff;
+    text-decoration: underline;
+}
+#aboutwrap a:hover {
+	color: #68d676;
 }
 
 #social {
@@ -193,6 +209,12 @@ a:hover {
 #footerwrap p {
 	color: #f2f2f2;
 	margin-left: 10px;
+}
+
+.footer-on-works {
+    position: absolute;		
+    width: 100%;
+    bottom: 0px;
 }
 
 #workwrap {	
@@ -235,9 +257,11 @@ a:hover {
 	margin-top: -70px;
 	padding-top: 250px;
 	text-align:center;
-	background-attachment: relative;
-	background-position: center top;
-	min-height: 550px;
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	min-height: 650px;
 	width: 100%;
 	
     -webkit-background-size: 100%;
