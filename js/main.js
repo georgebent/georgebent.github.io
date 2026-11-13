@@ -83,3 +83,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	});
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+	var year = String(new Date().getFullYear());
+	Array.prototype.forEach.call(document.querySelectorAll('.current-year'), function (el) {
+		el.textContent = year;
+	});
+});
