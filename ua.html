@@ -1,11 +1,27 @@
 <!DOCTYPE HTML>
 
-<html xmlns="http://www.w3.org/1999/html" lang="uk">
+<html lang="uk">
 	<head>
 		<title>Портфоліо</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'" />
+		<meta name="referrer" content="strict-origin-when-cross-origin" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content="Портфоліо Юрія Кривого, Senior PHP / Go Developer." />
+		<link rel="canonical" href="https://georgebent.github.io/ua.html" />
+		<link rel="alternate" hreflang="en" href="https://georgebent.github.io/" />
+		<link rel="alternate" hreflang="uk" href="https://georgebent.github.io/ua.html" />
+		<link rel="alternate" hreflang="x-default" href="https://georgebent.github.io/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Юрій Кривий — Senior PHP / Go Developer" />
+		<meta property="og:description" content="Портфоліо Юрія Кривого, Senior PHP / Go Developer." />
+		<meta property="og:url" content="https://georgebent.github.io/ua.html" />
+		<meta property="og:image" content="https://georgebent.github.io/images/og.jpg" />
+		<meta property="og:image:width" content="600" />
+		<meta property="og:image:height" content="600" />
+		<meta property="og:locale" content="uk_UA" />
+		<meta property="og:locale:alternate" content="en_US" />
+		<meta name="twitter:card" content="summary" />
 		<link rel="stylesheet" href="css/skel.css" />
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/style-xlarge.css" media="(max-width: 1800px)" />
@@ -13,183 +29,9 @@
 		<link rel="stylesheet" href="css/style-medium.css" media="(max-width: 980px)" />
 		<link rel="stylesheet" href="css/style-small.css" media="(max-width: 736px)" />
 		<link rel="stylesheet" href="css/style-xsmall.css" media="(max-width: 480px)" />
-		<script type="text/javascript">
-			window.addEventListener('load', function () {
-				var preloader = document.getElementById('p_prldr');
-				if (!preloader) {
-					return;
-				}
-				var svgAnm = preloader.querySelector('.svg_anm');
-				if (svgAnm) {
-					svgAnm.style.display = 'none';
-				}
-				window.setTimeout(function () {
-					preloader.style.transition = 'opacity 0.4s ease';
-					preloader.style.opacity = '0';
-					window.setTimeout(function () {
-						preloader.style.display = 'none';
-					}, 400);
-				}, 500);
-			});
-		</script>
-		<script type="text/javascript">
-			document.addEventListener('DOMContentLoaded', function () {
-				var links = document.querySelectorAll('#two .work-item a');
-				if (!links.length) {
-					return;
-				}
-
-				var overlay = document.createElement('div');
-				overlay.id = 'lightbox';
-				overlay.innerHTML =
-					'<div class="lightbox-backdrop"></div>' +
-					'<div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Image preview">' +
-					'<button class="lightbox-close" type="button" aria-label="Close">&times;</button>' +
-					'<img alt="" />' +
-					'</div>';
-				document.body.appendChild(overlay);
-
-				var img = overlay.querySelector('img');
-				var closeBtn = overlay.querySelector('.lightbox-close');
-
-				function closeLightbox() {
-					overlay.classList.remove('is-open');
-					img.src = '';
-				}
-
-				function openLightbox(src, alt) {
-					img.src = src;
-					img.alt = alt || 'Image preview';
-					overlay.classList.add('is-open');
-				}
-
-				overlay.addEventListener('click', function (event) {
-					if (event.target === overlay || event.target.classList.contains('lightbox-backdrop')) {
-						closeLightbox();
-					}
-				});
-
-				closeBtn.addEventListener('click', closeLightbox);
-
-				document.addEventListener('keydown', function (event) {
-					if (event.key === 'Escape' && overlay.classList.contains('is-open')) {
-						closeLightbox();
-					}
-				});
-
-				links.forEach(function (link) {
-					link.addEventListener('click', function (event) {
-						event.preventDefault();
-						var thumb = link.querySelector('img');
-						openLightbox(link.getAttribute('href'), thumb ? thumb.alt : '');
-					});
-				});
-			});
-		</script>
-		<style>
-			/* Loader */
-			#p_prldr{
-				position: fixed;
-				left: 0;
-				top: 0;
-				right:0;
-				bottom:0;
-				background: #696969;
-				z-index: 30;}
-
-			.contpre small{font-size:25px;}
-
-			.contpre{
-				width: 250px;
-				height: 100px;
-				position: absolute;
-				left: 50%;top: 48%;
-				margin-left:-125px;
-				margin-top:-75px;
-				color:#fff;
-				font-size:40px;
-				letter-spacing:-2px;
-				text-align:center;
-				line-height:35px;}
-
-			#p_prldr .svg_anm {
-				position: absolute;
-				width: 41px;
-				height: 41px;
-				background: url(images/pufff.svg) center center no-repeat;
-				background-size:41px;
-				margin: -16px 0 0 -16px;}
-
-			/* Lightbox */
-			#lightbox {
-				position: fixed;
-				inset: 0;
-				display: none;
-				align-items: center;
-				justify-content: center;
-				z-index: 100;
-			}
-			#lightbox.is-open { display: flex; }
-			#lightbox .lightbox-backdrop {
-				position: absolute;
-				inset: 0;
-				background: rgba(0, 0, 0, 0.8);
-			}
-			#lightbox .lightbox-content {
-				position: relative;
-				z-index: 1;
-				max-width: 70vw;
-				max-height: 70vh;
-			}
-			#lightbox img {
-				display: block;
-				max-width: 70vw;
-				max-height: 70vh;
-				border-radius: 4px;
-				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-			}
-			@media (max-width: 736px) {
-				#lightbox .lightbox-content {
-					max-width: 90vw;
-					max-height: 90vh;
-				}
-				#lightbox img {
-					max-width: 90vw;
-					max-height: 90vh;
-				}
-			}
-			#lightbox .lightbox-close {
-				position: absolute;
-				top: -12px;
-				right: -12px;
-				width: 32px;
-				height: 32px;
-				border: 0;
-				border-radius: 16px;
-				background: #ffffff;
-				color: #1f1815;
-				font-size: 22px;
-				line-height: 32px;
-				cursor: pointer;
-			}
-		</style>
-		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-		<script type="text/javascript">
-			document.addEventListener('DOMContentLoaded', function () {
-				var links = document.querySelectorAll('a[data-contact]');
-				Array.prototype.forEach.call(links, function (link) {
-					link.addEventListener('click', function (event) {
-						if (link.getAttribute('href') !== '#') {
-							return;
-						}
-						event.preventDefault();
-						var href = atob(link.getAttribute('data-contact')).split('').reverse().join('');
-						link.setAttribute('href', href);
-						link.textContent = href.slice(href.indexOf(':') + 1);
-					});
-				});
-			});
-		</script>
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+		<script src="js/main.js" defer></script>
 	</head>
 	<body id="top">
 
@@ -203,7 +45,7 @@
 
 		<!-- Header -->
 			<header id="header">
-				<a href="/ua.html" class="image avatar"><img src="images/avatar.png" alt="Портрет Юрія Кривого" /></a>
+				<a href="/ua.html" class="image avatar"><img src="images/avatar.webp" width="256" height="256" alt="Портрет Юрія Кривого" /></a>
 				<h1><strong>Юрій Кривий</strong><br />
 					Senior PHP / Go Developer<br />
 				</h1>
@@ -231,7 +73,7 @@
 						- Databases: PostgreSQL, MongoDB, MySQL;<br>
 						- Infrastructure: Docker, Kubernetes, Linux;<br>
 						- CI/CD: Jenkins, GitLab;<br>
-						- Messaging & Caching: RabbitMQ, Redis;<br>
+						- Messaging &amp; Caching: RabbitMQ, Redis;<br>
 						- Search: Elasticsearch;<br>
 						- Testing: PHPUnit, Selenium, Codeception;<br>
 						- Tools: Git, Nginx, Apache;<br>
@@ -248,7 +90,7 @@
 								<a href="http://converter.weblib.com.ua" target="_blank" rel="noopener noreferrer">convert-helper.com</a>
 							</h2>
 							<article class="6u 12u$(3) work-item">
-								<a href="images/fulls/1.png" class="image fit thumb"><img src="images/thumbs/01.png" alt="Скріншот проєкту Convert Helper" /></a>
+								<a href="images/fulls/1.webp" class="image fit thumb"><img src="images/thumbs/01.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Скріншот проєкту Convert Helper" /></a>
 								<h3>Convert Helper - Онлайн-сервіс перетворення одиниць вимірювання</h3>
 							</article>
 						</div>
@@ -257,7 +99,7 @@
 								<a href="https://maki.te.ua" target="_blank" rel="noopener noreferrer">maki.te.ua</a>
 							</h2>
 							<article class="6u$ 12u$(3) work-item">
-								<a href="images/fulls/2.png" class="image fit thumb"><img src="images/thumbs/02.png" alt="Скріншот проєкту Maki Art" /></a>
+								<a href="images/fulls/2.webp" class="image fit thumb"><img src="images/thumbs/02.webp" width="300" height="165" loading="lazy" decoding="async" alt="Скріншот проєкту Maki Art" /></a>
 								<h3>Фотостудія - Maki Art</h3>
 
 							</article>
@@ -272,7 +114,7 @@
 								<a href="http://weblib.com.ua/" target="_blank" rel="noopener noreferrer">weblib.com.ua</a>
 							</h2>
 							<article class="6u 12u$(3) work-item">
-								<a href="images/fulls/31.png" class="image fit thumb"><img src="images/thumbs/311.png" alt="Скріншот проєкту Web Library" /></a>
+								<a href="images/fulls/31.webp" class="image fit thumb"><img src="images/thumbs/311.webp" width="350" height="185" loading="lazy" decoding="async" alt="Скріншот проєкту Web Library" /></a>
 								<h3>Освітній портал - Web Library</h3>
 								<p></p>
 							</article>
@@ -283,7 +125,7 @@
 								<a href="https://souldoctor.org.ua/" target="_blank" rel="noopener noreferrer">souldoctor.org.ua</a>
 							</h2>
 							<article class="6u 12u$(3) work-item">
-								<a href="images/fulls/4.png" class="image fit thumb"><img src="images/thumbs/41.png" alt="Скріншот проєкту Soul Doctor" /></a>
+								<a href="images/fulls/4.webp" class="image fit thumb"><img src="images/thumbs/41.webp" width="300" height="170" loading="lazy" decoding="async" alt="Скріншот проєкту Soul Doctor" /></a>
 								<h3>Блог - Soul Doctor</h3>
 								<p></p>
 							</article>
@@ -298,7 +140,7 @@
 								<a href="http://lajam.com.ua/" target="_blank" rel="noopener noreferrer">lajam.com.ua</a>
 							</h2>
 							<article class="6u 12u$(3) work-item">
-								<a href="images/fulls/5.png" class="image fit thumb"><img src="images/thumbs/51.png" alt="Скріншот проєкту LaJam" /></a>
+								<a href="images/fulls/5.webp" class="image fit thumb"><img src="images/thumbs/51.webp" width="300" height="169" loading="lazy" decoding="async" alt="Скріншот проєкту LaJam" /></a>
 								<h3>Музична група - LaJam</h3>
 								<p></p>
 							</article>
@@ -309,7 +151,7 @@
 								<a href="http://obriy.com.ua/" target="_blank" rel="noopener noreferrer">obriy.com.ua</a>
 							</h2>
 							<article class="6u 12u$(3) work-item">
-								<a href="images/fulls/6.png" class="image fit thumb"><img src="images/thumbs/61.png" alt="Скріншот проєкту Obriy" /></a>
+								<a href="images/fulls/6.webp" class="image fit thumb"><img src="images/thumbs/61.webp" width="300" height="169" loading="lazy" decoding="async" alt="Скріншот проєкту Obriy" /></a>
 								<h3>Ремонтно-механічний завод - Обрій</h3>
 								<p></p>
 							</article>
@@ -342,7 +184,7 @@
 					</div>
 				</section>
 			</div>
-			
+
 		<!-- Footer -->
 			<footer id="footer">
 				<ul class="icons">
@@ -351,9 +193,9 @@
 					<li><a href="https://www.linkedin.com/in/yuriy-k-2a3227137" target="_blank" rel="noopener noreferrer" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
 				</ul>
 				<ul class="copyright">
-					<li>&copy; Портфоліо, 2017</li><li><a href="/ua.html">Юрій Кривий</a></li>
+					<li>&copy; Портфоліо, 2017&ndash;2026</li><li><a href="/ua.html">Юрій Кривий</a></li>
 				</ul>
-				
+
 				<ul class="copyright">
 					<li><a href="/">ENG</a></li><li><a href="/ua.html">UA</a></li>
 				</ul>

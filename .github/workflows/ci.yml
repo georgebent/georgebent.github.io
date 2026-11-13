@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  html:
+    name: Validate HTML
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npx --yes html-validate@8 index.html ua.html 404.html
+
+  links:
+    name: Check links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --root-dir "${{ github.workspace }}" index.html ua.html 404.html
+          fail: true
+
+  contacts:
+    name: No plain-text contacts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Phone numbers and emails must stay encoded (data-contact)
+        run: |
+          files=$(git ls-files '*.html' '*.js' '*.css' '*.json' '*.xml' '*.txt')
+          if grep -nEH 'tel:|mailto:|\+?380[0-9 ()-]{9,}|[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}' $files; then
+            echo "::error::Plain-text phone or email found. Encode it with: printf '%s' 'tel:+380…' | rev | base64"
+            exit 1
+          fi

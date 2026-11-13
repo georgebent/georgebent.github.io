@@ -1,0 +1,5 @@
+# Domain no longer resolves; the project is kept on the page on purpose
+^https?://lajam\.com\.ua
+# These sites block automated requests (HTTP 999 / 400)
+^https://www\.linkedin\.com/
+^https://www\.facebook\.com/
